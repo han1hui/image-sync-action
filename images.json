@@ -1,4 +1,4 @@
 {
-"docker.io/library/mongo:6.0.28": "[registry.cn-shanghai.aliyuncs.com/vitacloud/mongo:6.0.28](https://registry.cn-shanghai.aliyuncs.com/vitacloud/mongo:6.0.28)",
-"docker.io/library/redis:7.4.6": "[registry.cn-shanghai.aliyuncs.com/vitacloud/redis:7.4.6](registry.cn-shanghai.aliyuncs.com/vitacloud/redis:7.4.6)"
+  "docker.io/library/mongo:6.0.28": "registry.cn-shanghai.aliyuncs.com/vitacloud/mongo:6.0.28",
+  "docker.io/library/redis:7.4.6": "registry.cn-shanghai.aliyuncs.com/vitacloud/redis:7.4.6"
 }
