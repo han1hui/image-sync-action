@@ -1,0 +1,47 @@
+name: Docker Image Sync
+
+on:
+  push:
+    paths:
+      - 'images.json'   # 当你修改常用镜像列表并提交时，自动触发
+  schedule:
+    - cron: '0 22 * * *' # 每天北京时间凌晨6点自动运行一次
+  workflow_dispatch:     # 允许你在 GitHub 页面上手动点击按钮触发
+
+jobs:
+  image-sync:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Log in to Aliyun ACR
+      run: |
+        # 使用成都地域域名登录阿里云
+        echo "${{ secrets.ALIYUN_HUB_PASSWORD }}" | docker login --username "${{ secrets.ALIYUN_HUB_USERNAME }}" --password-stdin registry.cn-shanghai.aliyuncs.com
+
+    - name: Parse and Sync Images
+      run: |
+        # 使用 jq 工具解析根目录下的 images.json 并循环同步
+        jq -r 'to_entries[] | "\\(.key) \\(.value)"' images.json | while read -r source_image target_image; do
+          if [ -z "$source_image" ] || [ -z "$target_image" ]; then
+            continue
+          fi
+          echo "========================================="
+          echo "🚀 正在同步: $source_image -> $target_image"
+          echo "========================================="
+          
+          # 1. 从官方拉取
+          docker pull "$source_image"
+          
+          # 2. 修改标签
+          docker tag "$source_image" "$target_image"
+          
+          # 3. 推送到阿里云
+          docker push "$target_image"
+          
+          # 4. 清理本地镜像防止撑爆磁盘
+          docker rmi "$source_image" "$target_image"
+          
+          echo "✅ 同步完成!"
+        done
