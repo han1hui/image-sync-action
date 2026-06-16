@@ -19,7 +19,7 @@ jobs:
         run: |
           # 下载最新版 image-syncer（Linux AMD64）
           curl -fsSL -o image-syncer.tar.gz \
-            https://github.com/AliyunContainerService/image-syncer/releases/latest/download/image-syncer-linux-amd64.tar.gz
+            https://github.com/AliyunContainerService/image-syncer/releases/download/v1.5.5/image-syncer-v1.5.5-linux-amd64.tar.gz
           
           tar -xzf image-syncer.tar.gz
           chmod +x image-syncer
