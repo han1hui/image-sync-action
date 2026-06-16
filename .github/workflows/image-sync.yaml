@@ -1,37 +1,23 @@
-name: image-sync
+name: Sync images
 
 on:
-  push:
-    paths:
-      - 'images.json'
-  schedule:
-    - cron: '0 22 * * *'  # 北京时间每天 06:00
   workflow_dispatch:
+  schedule:
+    # every day at 7am & 7pm pacific
+    - cron: "0 2,14 * * *"
 
 jobs:
-  image-sync:
+  sync-images:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Download image-syncer
-        run: |
-          # 下载最新版 image-syncer（Linux AMD64）
-          curl -fsSL -o image-syncer.tar.gz \
-            https://github.com/AliyunContainerService/image-syncer/releases/download/v1.5.5/image-syncer-v1.5.5-linux-amd64.tar.gz
-          
-          tar -xzf image-syncer.tar.gz
-          chmod +x image-syncer
-          ./image-syncer --version
-
-      - name: Run image-syncer
-        run: |
-          ./image-syncer \
-            --config images.json \
-            --registry registry.cn-shanghai.aliyuncs.com \
-            --username ${{ secrets.ALIYUN_HUB_USERNAME }} \
-            --password ${{ secrets.ALIYUN_HUB_PASSWORD }} \
-            --proc 2 \
-            --retries 3 \
-            --logger info
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: hhyasdf/image-sync-action@v1.1
+        with:
+          auth_file: ./auth.yaml
+          images_file: ./images.yaml
+          version: latest
+          proc: 20
+        env:
+          ACR_PASSWORD: ${{ secrets.ALIYUN_HUB_PASSWORD }}
+          ACR_USERNAME: ${{ secrets.ALIYUN_HUB_USERNAME }}
