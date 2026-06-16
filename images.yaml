@@ -2,4 +2,4 @@
 "mongo:6.0.28": "registry.cn-shanghai.aliyuncs.com/vitacloud/mongo:6.0.28"
 "mysql:8.0.43": "registry.cn-shanghai.aliyuncs.com/vitacloud/mysql:8.0.43"
 "apache/kafka:3.9.1": "registry.cn-shanghai.aliyuncs.com/vitacloud/apache-kafka:3.9.1"
-"apache/zookeeper:3.9.3": "registry.cn-shanghai.aliyuncs.com/vitacloud/apache-zookeeper:3.9.3"
+"zookeeper:3.9.3": "registry.cn-shanghai.aliyuncs.com/vitacloud/zookeeper:3.9.3"
