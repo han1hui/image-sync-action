@@ -1,4 +1,4 @@
-name: Docker Image Sync
+name: image-sync
 
 on:
   push:
