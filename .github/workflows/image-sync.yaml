@@ -1,0 +1,37 @@
+name: Docker Image Sync
+
+on:
+  push:
+    paths:
+      - 'images.json'
+  schedule:
+    - cron: '0 22 * * *'  # 北京时间每天 06:00
+  workflow_dispatch:
+
+jobs:
+  image-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Download image-syncer
+        run: |
+          # 下载最新版 image-syncer（Linux AMD64）
+          curl -fsSL -o image-syncer.tar.gz \
+            https://github.com/AliyunContainerService/image-syncer/releases/latest/download/image-syncer-linux-amd64.tar.gz
+          
+          tar -xzf image-syncer.tar.gz
+          chmod +x image-syncer
+          ./image-syncer --version
+
+      - name: Run image-syncer
+        run: |
+          ./image-syncer \
+            --config images.json \
+            --registry registry.cn-shanghai.aliyuncs.com \
+            --username ${{ secrets.ALIYUN_HUB_USERNAME }} \
+            --password ${{ secrets.ALIYUN_HUB_PASSWORD }} \
+            --proc 2 \
+            --retries 3 \
+            --logger info
