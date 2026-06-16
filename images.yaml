@@ -1,5 +1,5 @@
 "redis:7.4.6": "registry.cn-shanghai.aliyuncs.com/vitacloud/redis:7.4.6"
 "mongo:6.0.28": "registry.cn-shanghai.aliyuncs.com/vitacloud/mongo:6.0.28"
 "mysql:8.0.43": "registry.cn-shanghai.aliyuncs.com/vitacloud/mysql:8.0.43"
-"bitnami/kafka:3.9.0": "registry.cn-shanghai.aliyuncs.com/vitacloud/bitnami-kafka:3.9.0"
-"bitnami/zookeeper:3.9.3": "registry.cn-shanghai.aliyuncs.com/vitacloud/bitnami-zookeeper:3.9.3"
+"bitnamilegacy/kafka:3.9.0": "registry.cn-shanghai.aliyuncs.com/vitacloud/bitnami-kafka:3.9.0"
+"bitnamilegacy/zookeeper:3.9.3": "registry.cn-shanghai.aliyuncs.com/vitacloud/bitnami-zookeeper:3.9.3"
