@@ -3,3 +3,6 @@
 "mysql:8.0.43": "registry.cn-shanghai.aliyuncs.com/vitacloud/mysql:8.0.43"
 "apache/kafka:3.9.1": "registry.cn-shanghai.aliyuncs.com/vitacloud/apache-kafka:3.9.1"
 "zookeeper:3.9.3": "registry.cn-shanghai.aliyuncs.com/vitacloud/zookeeper:3.9.3"
+"emqx/emqx:5.0.8": "registry.cn-shanghai.aliyuncs.com/vitacloud/emqx:5.0.8"
+"postgres:12.22": "registry.cn-shanghai.aliyuncs.com/vitacloud/postgres:12.22"
+"getmeili/meilisearch:v1.10.0": "registry.cn-shanghai.aliyuncs.com/vitacloud/meilisearch:v1.10.0"  
