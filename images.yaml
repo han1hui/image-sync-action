@@ -7,3 +7,4 @@
 "postgres:12.22": "registry.cn-shanghai.aliyuncs.com/vitacloud/postgres:12.22"
 "getmeili/meilisearch:v1.10.0": "registry.cn-shanghai.aliyuncs.com/vitacloud/meilisearch:v1.10.0"
 "rancher/mirrored-metrics-server:v0.6.1": "registry.cn-shanghai.aliyuncs.com/vitacloud/metrics-server:v0.6.1"
+"nginx:alpine": "registry.cn-shanghai.aliyuncs.com/vitacloud/nginx:alpine"
