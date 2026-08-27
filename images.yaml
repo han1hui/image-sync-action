@@ -14,3 +14,4 @@
 "ribbybibby/ssl-exporter:2.4.2": "registry.cn-shanghai.aliyuncs.com/vitacloud/ssl-exporter:2.4.2"
 "alpine:latest": "registry.cn-shanghai.aliyuncs.com/vitacloud/alpine:latest"
 "swr.cn-north-4.myhuaweicloud.com/ddn-k8s/registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.18.0": "registry.cn-shanghai.aliyuncs.com/vitacloud/kube-state-metrics:v2.18.0"
+"eclipse-temurin:21-jdk": "registry.cn-shanghai.aliyuncs.com/vitacloud/eclipse-temurin:21-jdk"
