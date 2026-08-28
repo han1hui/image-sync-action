@@ -15,3 +15,5 @@
 "alpine:latest": "registry.cn-shanghai.aliyuncs.com/vitacloud/alpine:latest"
 "swr.cn-north-4.myhuaweicloud.com/ddn-k8s/registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.18.0": "registry.cn-shanghai.aliyuncs.com/vitacloud/kube-state-metrics:v2.18.0"
 "eclipse-temurin:21-jdk": "registry.cn-shanghai.aliyuncs.com/vitacloud/eclipse-temurin:21-jdk"
+"maven:3-jdk-8": "registry.cn-shanghai.aliyuncs.com/vitacloud/maven:3-jdk-8"
+"maven:3.9.9-eclipse-temurin-21": "registry.cn-shanghai.aliyuncs.com/vitacloud/maven:3.9.9-eclipse-temurin-21"
