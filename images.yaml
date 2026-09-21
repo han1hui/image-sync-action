@@ -20,3 +20,4 @@
 "node:22.19.0": "registry.cn-shanghai.aliyuncs.com/vitacloud/node:22.19.0"
 "breakwa11/shadowsocksr": "registry.cn-shanghai.aliyuncs.com/xhui/shadowsocksr"
 "debian:stable-slim": "registry.cn-shanghai.aliyuncs.com/xhui/debian:stable-slim"
+"pgsty/silo:RELEASE.2026-09-16T00-00-00Z": "registry.cn-shanghai.aliyuncs.com/vitacloud/silo:RELEASE.2026-09-16T00-00-00Z"
